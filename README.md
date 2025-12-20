@@ -130,14 +130,15 @@ We recommend applying Set-of-Mark prompting to the clips before the gaze, to ens
 
 *Environment: `obj_ia_som_env`*
 
-* **--videos_path**: The root folder containing the video_segments directory.
+* **--video_segments_path**: The folder containing the standard RGB video clips extracted with the `extract_video_clips.py` script.
 * **--gaze**: Set to True only if you are processing clips that already have Gaze (reverse order). For the standard pipeline, keep this set to `False`.
 
 ```bash
 conda activate obj_ia_som_env
 
 python src/data_processing/som_last_module.py \
-    --videos_path /path/to/hd_epic_dataset \
+    --video_segments_path /path/to/hd_epic_dataset/videos \
+    --output_path /path/to/output/folder
     --gaze False \
     --gpu 0
 ```
@@ -150,17 +151,20 @@ This creates the `SoM_last_video_segments` folder at the specified videos path.
 
 Applies the user gaze trajectory to the videos. If you completed Step 2A, you can set `--som True` to draw gaze on top of the SoM-augmented clips, or leave it false to draw the gaze on standard RGB clips.
 
-* **--videos_path**: The root folder containing your video segments.
+* **--videos_path**: The folder containing the HD-EPIC videos.
+* **--video_segments_path**: The folder containing the standard RGB video clips extracted with the `extract_video_clips.py` script.
 * **--gaze_path**: Path to the raw HD-EPIC gaze data folder.
 * **--vrs_path**: Path to the raw HD-EPIC VRS files.
-* **--som**: Set to True to process the SoM clips (SoM_last_video_segments). Set to False for standard clips.
+* **--output_path**: Path to the output folder, a subfolder will be created with the gaze-enhanced clips inside.
+* **--som**: Set to True if the clips you're processing are `SoM`-enhanced. Set to False for standard clips. This will only add "SoM_last" before "Gaze" in the output folder's name that will be created under ´output_path´.
 
 ```bash
 conda activate obj_ia_gaze_env
 
 python src/data_processing/gaze_trajectory_module.py \
-    --videos_path /path/to/hd_epic_dataset \
-    --output_path /path/to/hd_epic_dataset \
+    --videos_path /path/to/hd_epic_dataset/videos \
+    --video_segments_path /path/to/extracted/video/segments \
+    --output_path /path/to/output/folder \
     --gaze_path /path/to/hd_epic_dataset/gaze_data \
     --vrs_path /path/to/hd_epic_dataset/vrs_files \
     --timestamp_path src/data_processing/clip_timestamps.csv \

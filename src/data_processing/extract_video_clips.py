@@ -1,15 +1,13 @@
 # ------------------------------------------------- #
 # This script extracts all the individual clips of the 
 # HD-EPIC Interaction Anticipation benchmark from the 
-# videos. Before running this script you have to 
-# extract the start and end timestamps of the clips
-# with the extract_video_times.py script.
+# videos. The start and end timestamps of the video clips
+# have already been extracted and can be found in the
+# src/data_processing/clip_timestamps.csv file.
 
 # If you're replicating the experiments in the paper,
-# just replace all the paths with your local ones and
-# use the indicated versions of all the dependencies.
+# carefully follow the instructions in the repo's README.md
 # ------------------------------------------------- #
-
 
 # Any recent version (2025) of pandas and cv2 should be fine here.
 # The specific versions used in our environment are: pandas==2.3.2, opencv-python==4.12.0.88

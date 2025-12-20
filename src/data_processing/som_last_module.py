@@ -189,7 +189,8 @@ def handle_source_file(parameters):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--videos_path", type=str, required=True, help="Path to the videos folder")
+    parser.add_argument("--video_segments_path", type=str, required=True, help="Path to the video segments folder")
+    parser.add_argument("--output_path", type=str, required=True, help="Output path")
     parser.add_argument("--gaze", type=str, required=True, help="Whether the frames are gaze annotated (True/False)")
     parser.add_argument("--gpu", type=int, default=0, help="GPU id to use")
     
@@ -208,11 +209,11 @@ def main():
     gaze_input = str(args.gaze).lower()
     gaze = gaze_input in ['true', 'y', 'yes', '1']
 
-    if not os.path.exists(args.videos_path):
-        raise ValueError(f"videos_path does not exist: {args.videos_path}")
+    if not os.path.exists(args.video_segments_path):
+        raise ValueError(f"video_segments_path does not exist: {args.video_segments_path}")
     
-    source_path = os.path.join(args.videos_path, f"{'Gaze_' if gaze else ''}video_segments")
-    dest_path = os.path.join(args.videos_path, f"SoM_last_{'Gaze_' if gaze else ''}video_segments")
+    source_path = args.video_segments_path
+    dest_path = os.path.join(args.output_path, f"SoM_last_{'Gaze_' if gaze else ''}video_segments")
 
     print(f"Reading from: {source_path}")
     print(f"Writing to:   {dest_path}")

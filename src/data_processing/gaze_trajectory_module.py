@@ -127,16 +127,20 @@ def apply_gaze_data_to_segments(video_file_path, gaze_cpf, output_folder, vrs_fi
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--videos_path", type=str, required=True, help="Path to the videos folder")
+    parser.add_argument("--videos_path", type=str, required=True, help="Path to the HD-EPIC videos folder")
+    parser.add_argument("--video_segments_path", type=str, required=True, help="Path to the extracted RGB video segments")
     parser.add_argument("--gaze_path", type=str, required=True, help="Path to the gaze folder")
     parser.add_argument("--vrs_path", type=str, required=True, help="Path to the vrs folder")
     parser.add_argument("--timestamp_path", type=str, required=True, help="Path to the timestamp file")
     parser.add_argument("--output_path", type=str, required=True, help="Path to the output folder")
-    parser.add_argument("--som", type=bool, required=True, help="Whether the frames are SoM annotated")
+    parser.add_argument("--som", type=str, required=True, help="Whether the frames are SoM annotated")
     args = parser.parse_args()
     # make sure videos_path is a valid path
     if not os.path.exists(args.videos_path):
         raise ValueError("videos_path must be a valid path")
+    # make sure video_segments_path is a valid path
+    if not os.path.exists(args.video_segments_path):
+        raise ValueError("video_segments_path must be a valid path")
     # make sure gaze_path is a valid path
     if not os.path.exists(args.gaze_path):
         raise ValueError("gaze_path must be a valid path")
@@ -146,14 +150,12 @@ def main():
     # make sure timestamp_path is a valid path
     if not os.path.exists(args.timestamp_path):
         raise ValueError("timestamp_path must be a valid path")
-    # make sure output_path is a valid path
-    if not os.path.exists(args.output_path):
-        raise ValueError("output_path must be a valid path")
-    # make sure som is a boolean
-    if not isinstance(args.som, bool):
-        raise ValueError("som must be a boolean")
-    args = parser.parse_args()
-    # insert your local paths where you downloaded the videos, gaze and vrs files from the HD-EPIC dataset
+
+    som_input = str(args.som).lower()
+    print(som_input)
+    som = som_input in ['true', 'y', 'yes', '1']
+    os.makedirs(args.output_path, exist_ok=True)
+
     videos_base_folder = f"{args.videos_path}/"
     gaze_base_folder = f"{args.gaze_path}/"
     vrs_base_folder = f"{args.vrs_path}/"
@@ -161,8 +163,8 @@ def main():
     interaction_anticipation_timestamps = pd.read_csv(interaction_anticipation_timestamps_path)
     videos_in_question = interaction_anticipation_timestamps["video_id"].unique()
 
-    video_segments_base_folder = f"{args.videos_path}/{'SoM_last_' if args.som else ''}video_segments/"
-    output_folder = f"{args.output_path}/{'SoM_' if args.som else ''}Gaze_video_segments/"
+    video_segments_base_folder = f"{args.video_segments_path}/" #{'SoM_last_' if args.som else ''}/
+    output_folder = f"{args.output_path}/{'SoM_last_' if som else ''}Gaze_video_segments/"
     print(f"Video segments path: {video_segments_base_folder}")
     print(f"Output folder: {output_folder}")
     print("Applying gaze trajectories to video segments...")
@@ -207,7 +209,7 @@ def main():
 
             gaze_cpf = mps.read_eyegaze(gaze_file)
             print(f"Applying gaze data to segments for {video_file} using {gaze_file}")
-            apply_gaze_data_to_segments(video_file, gaze_cpf, output_folder, vrs_file_path, video_segments_base_folder, participant, interaction_anticipation_segments)
+            apply_gaze_data_to_segments(video_file, gaze_cpf, output_folder, vrs_file_path, video_segments_base_folder, participant, interaction_anticipation_timestamps)
 
 if __name__ == "__main__":
     main()
