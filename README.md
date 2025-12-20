@@ -92,18 +92,13 @@ Lastly, copy the som_last_module.py script to the SoM folder and run it.
 conda env create -f environment_gaze_full.yaml
 ```
 
-Enjoy! The environment is ready.
-Now, just run:
-```bash
-python gaze_trajectory_module.py
-```
-to apply the user gaze to your videos.
+And... that's it! The environment is ready.
 
 ### 4. Inference environment setup
+The same as the gaze environment happens with the inference env: nothing needs to be manually installed after creating the environment with:
 ```bash
 conda env create -f environment_inference.yaml
 ```
-And you're done with the environments!
 
 
 ## 🚀 Usage Pipeline
