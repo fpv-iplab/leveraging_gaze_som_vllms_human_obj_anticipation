@@ -176,9 +176,9 @@ Output: Creates `Gaze_video_segments/` folder (or `SoM_last_Gaze_video_segments/
 ### Step 3: Model Inference
 *Environment: `obj_ia_inf_env`*
 
-Run the evaluation using the desired model. The scripts automatically locate the correct subfolder (e.g., `Gaze_video_segments`, `SoM_last_Gaze_video_segments`) based on the `--mode` argument.
+Run the evaluation using the desired model. The scripts automatically changes the VLLMs' prompt depending on the `--mode` argument's value.
 
-* **--data_path**: The root folder containing your processed video segments subfolders.
+* **--video_clips_path**: The folder containing the video clips. Note that the type of clips (standard, som, gaze, som_gaze) must be coherent with the chosen `--mode`.
 * **--annotations_path**: The folder containing the `gaze_interaction_anticipation.json` file from the HD-EPIC annotations `vqa_benchmark` folder.
 * **--mode**: The modality to test. Options: standard, gaze, som, som_gaze, som_last, som_last_gaze.
 
@@ -188,7 +188,7 @@ Run the evaluation using the desired model. The scripts automatically locate the
 conda activate obj_ia_inf_env
 
 python src/inference/obj_ia_inf_llava_ov.py \
-    --data_path /path/to/hd_epic_dataset \
+    --video_clips_path /path/to/input/video/clips \
     --annotations_path /path/to/hd_epic_annotations \
     --mode som_gaze \
     --lamb 1.0 \
@@ -205,7 +205,7 @@ conda activate obj_ia_inf_env
 export GOOGLE_API_KEY="your_actual_api_key_here"
 
 python src/inference/obj_ia_inf_gemini.py \
-    --data_path /path/to/hd_epic_dataset \
+    --video_clips_path /path/to/input/video/clips \
     --annotations_path /path/to/hd_epic_annotations \
     --mode som_gaze \
     --fps 1

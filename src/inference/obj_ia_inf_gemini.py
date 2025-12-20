@@ -83,12 +83,12 @@ def main():
     parser.add_argument("--mode", type=str, default="standard",
                         help="Mode, e.g. 'standard', 'gaze', 'som', or 'som_gaze'")
     parser.add_argument("--fps", type=int, default=1, help="Fps for sampling")
-    parser.add_argument("--data_path", type=str, required=True, help="Path to the data folder")
+    parser.add_argument("--video_clips_path", type=str, required=True, help="Path to the data folder")
     parser.add_argument("--annotations_path", type=str, required=True, help="Path to the annotations folder")
     args = parser.parse_args()
-    # make sure data_path is a valid path
-    if not os.path.exists(args.data_path):
-        raise ValueError("data_path must be a valid path")
+    # make sure video_clips_path is a valid path
+    if not os.path.exists(args.video_clips_path):
+        raise ValueError("video_clips_path must be a valid path")
     # make sure annotations_path is a valid path
     if not os.path.exists(args.annotations_path):
         raise ValueError("annotations_path must be a valid path")
@@ -97,23 +97,8 @@ def main():
     custom_fps = args.fps
 
     mode = args.mode
-    # insert your local path here if needed
-    base_folder = f"{args.data_path}/"
-    # Build the appropriate folder name
-    if mode == "som":
-        base_folder += "SoM_"
-    elif mode == "som_last":
-        base_folder += "SoM_last_"
-    elif mode == "gaze":
-        base_folder += "Gaze_"
-    elif mode == "som_last_gaze":
-        base_folder += "SoM_last_Gaze_"
-    elif mode == "som_gaze":
-        base_folder += "SoM_Gaze_"
+    base_folder = f"{args.video_clips_path}/"
 
-    base_folder += f"video_segments/"
-
-    # insert your local path where you downloaded the HD-EPIC annotations
     interaction_anticipation_questions_path = f"{args.annotations_path}/gaze_interaction_anticipation.json"
     interaction_anticipations_questions = pd.read_json(interaction_anticipation_questions_path).T
 
