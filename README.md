@@ -69,7 +69,7 @@ pip install git+https://github.com/UX-Decoder/Semantic-SAM.git@package
 
 #### Compile Ops:
 Go to the `src/third_party/SoM/ops` folder and:
-1. change the path at line 15 of make.sh from `/usr/local/cuda/bin/nvcc` to your local nvcc installation.
+1. change the path at line 15 of make.sh from `/usr/local/cuda/bin/nvcc` to your local `nvcc` installation. The path to your local `nvcc` binary is `$CUDA_HOME/bin/nvcc`, where `$CUDA_HOME` is one of the environment variables we created before.
 2. run:
 ```bash
 bash make.sh
@@ -77,7 +77,7 @@ bash make.sh
 
 #### Then, download the models checkpoints necessary for SoM:
 ```bash
-cd SoM/
+cd ../
 chmod +x download_ckpt.sh
 ./download_ckpt.sh
 ```

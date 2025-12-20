@@ -94,18 +94,17 @@ def main():
     parser.add_argument("--clips_timestamps_path", type=str, required=True)
     parser.add_argument("--output_path", type=str, required=True)
     parser.add_argument("--dataset_path", type=str, required=True)
+    args = parser.parse_args()
 
     # make sure clips_timestamps_path is a .csv file
     if not args.clips_timestamps_path.endswith(".csv"):
         raise ValueError("clips_timestamps_path must be a .csv file")
-    # make sure output_path is a valid path
-    if not os.path.exists(args.output_path):
-        raise ValueError("output_path must be a valid path")
     # make sure dataset_path is a valid path
     if not os.path.exists(args.dataset_path):
         raise ValueError("dataset_path must be a valid path")
     
-    args = parser.parse_args()
+    os.makedirs(args.output_path, exist_ok=True)
+    
     # insert your local path here
     clips_timestamps = pd.read_csv(args.clips_timestamps_path)    
     extract_all_video_segments(args.dataset_path, args.output_path, clips_timestamps)
