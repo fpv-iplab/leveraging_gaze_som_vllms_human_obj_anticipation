@@ -128,10 +128,10 @@ We recommend applying Set-of-Mark prompting to the clips before the gaze, to ens
 
 #### A. Generate and apply SoM masks to the last frame of each video
 
+*Environment: `obj_ia_som_env`*
+
 * **--videos_path**: The root folder containing the video_segments directory.
 * **--gaze**: Set to True only if you are processing clips that already have Gaze (reverse order). For the standard pipeline, keep this set to `False`.
-
-*Environment: `obj_ia_som_env`*
 
 ```bash
 conda activate obj_ia_som_env
