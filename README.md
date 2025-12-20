@@ -95,7 +95,7 @@ conda env create -f environment_gaze_full.yaml
 And... that's it! The environment is ready.
 
 ### 4. Inference environment setup
-The same as the gaze environment happens with the inference env: nothing needs to be manually installed after creating the environment with:
+The same as the gaze environment happens with the inference env: nothing needs to be manually installed after creating the environment with
 ```bash
 conda env create -f environment_inference.yaml
 ```
