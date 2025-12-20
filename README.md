@@ -183,7 +183,7 @@ Run the evaluation using the desired model. The scripts automatically locate the
 * **--annotations_path**: The folder containing the `gaze_interaction_anticipation.json` file from the HD-EPIC annotations `vqa_benchmark` folder.
 * **--mode**: The modality to test. Options: standard, gaze, som, som_gaze, som_last, som_last_gaze.
 
-**** Option A: LLaVA-OneVision
+#### Option A: LLaVA-OneVision
 
 ```bash
 conda activate obj_ia_inf_env
@@ -197,7 +197,7 @@ python src/inference/obj_ia_inf_llava_ov.py \
     --gpu 0
 ```
 
-**** Option B: Gemini 2.0 Flash
+#### Option B: Gemini 2.0 Flash
 
 Requires a valid Google API key.
 
