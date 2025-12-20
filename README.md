@@ -23,7 +23,7 @@ In this work, we used the **HD-EPIC** dataset. Please refer to their [website](h
 
 ⚠️ **Important:** Due to conflicting dependencies between legacy tools (SoM requires old NumPy) and modern tools (Project Aria requires new NumPy), we utilize **three separate Conda environments**.
 
-Please carefully follow the instructions below to set them up.
+Please carefully follow the instructions below to set them up. All the environments `.yaml` files are located in the `envs` folder.
 
 ### 1. Clone the repository
 ```bash
