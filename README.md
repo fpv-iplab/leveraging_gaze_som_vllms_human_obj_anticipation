@@ -136,7 +136,7 @@ We recommend applying Set-of-Mark prompting to the clips before the gaze, to ens
 conda activate obj_ia_som_env
 
 python src/data_processing/som_last_module.py \
-    --video_segments_path /path/to/hd_epic_dataset/videos \
+    --video_segments_path /path/to/extracted/video/segments \
     --output_path /path/to/output/folder
     --gaze False \
     --gpu 0
