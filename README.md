@@ -34,7 +34,7 @@ cd object_interaction_anticipation_with_vllms
 ### 2. Set-of-Mark environment setup
 #### Create the base conda environment
 ```bash
-conda env create -f environment_som_full.yaml
+conda env create -f envs/environment_som_full.yaml
 ```
 
 #### Activate it
@@ -89,7 +89,7 @@ Lastly, copy the som_last_module.py script to the SoM folder and run it.
 ### 3. Gaze environment setup
 #### Create the base conda environment
 ```bash
-conda env create -f environment_gaze_full.yaml
+conda env create -f envs/environment_gaze_full.yaml
 ```
 
 And... that's it! The environment is ready.
@@ -97,7 +97,7 @@ And... that's it! The environment is ready.
 ### 4. Inference environment setup
 The same as the gaze environment happens with the inference env: nothing needs to be manually installed after creating the environment with
 ```bash
-conda env create -f environment_inference.yaml
+conda env create -f envs/environment_inference.yaml
 ```
 
 
