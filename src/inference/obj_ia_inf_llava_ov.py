@@ -1,5 +1,5 @@
 # experiments using HD-EPIC's interaction anticipation benchmark.
-# modalities: standard, som_last, som, gaze, som_last_gaze, som_gaze
+# modalities: standard, som, gaze, som_gaze
 # inverse exponential sampling with lambda parameter
 # this script only uses LLaVA-OV
 
@@ -98,7 +98,7 @@ def video_queries_to_model(questions: pd.DataFrame, base_folder: str, mode: str)
             continue
 
         prompt = ""
-        if "last" in mode:
+        if "som" in mode:
             prompt += "Focus on the last frame to make your prediction and use the rest of the video to infer the context.\n\n"
         
         prompt += row['question'] + ''.join(f"\n{choice}" for choice in row['choices'])
