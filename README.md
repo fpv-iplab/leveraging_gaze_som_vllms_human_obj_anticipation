@@ -82,7 +82,6 @@ chmod +x download_ckpt.sh
 ./download_ckpt.sh
 ```
 Now your SoM environment is ready!
-Lastly, copy the som_last_module.py script to the SoM folder and run it.
 
 *The code in the `src/third_party/SoM` folder comes from the [Set-of-Mark prompting](https://som-gpt4v.github.io) official release on GitHub*
 
