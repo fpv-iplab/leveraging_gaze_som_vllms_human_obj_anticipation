@@ -201,7 +201,6 @@ Requires a valid Google API key.
 
 ```bash
 conda activate obj_ia_inf_env
-export GOOGLE_API_KEY="your_actual_api_key_here"
 
 python src/inference/obj_ia_inf_gemini.py \
     --video_clips_path /path/to/input/video/clips \
