@@ -1,10 +1,10 @@
-# Object Interaction Anticipation with VLLMs
+# Leveraging Gaze and Set-of-Mark in VLLMs for Human-Object Interaction Anticipation from Egocentric Videos
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This repository contains the official implementation of the paper **"Object Interaction Anticipation with Vision Large Language Models"**.
+This repository contains the official implementation of the paper **"Leveraging Gaze and Set-of-Mark in VLLMs for Human-Object Interaction Anticipation from Egocentric Videos"**.
 
-We propose a methodology to enhance Vision Large Language Models (VLLMs) for object interaction anticipation using:
+We propose a methodology to enhance Vision Large Language Models (VLLMs) for human-object interaction anticipation using:
 1.  **Set-of-Mark (SoM)** for visual grounding.
 2.  **User Gaze Trajectories** for user intent understanding.
 3.  **Inverse Exponential Sampling** for a temporal context-based frame sampling.
@@ -14,7 +14,7 @@ We propose a methodology to enhance Vision Large Language Models (VLLMs) for obj
 ## 🛠️ Hardware Requirements
 
 - **GPU:** NVIDIA GPU with at least 16GB of VRAM (Flash Attention 2 support recommended).
-- **Storage:** ~2.5TB space required for the HD-EPIC dataset and processed video clips.
+- **Storage:** ~2.5TB space required for the dataset and processed video clips.
 
 ## Dataset
 In this work, we used the **HD-EPIC** dataset. Please refer to their [website](https://hd-epic.github.io) for instructions on downloading the data.
