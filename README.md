@@ -1,8 +1,12 @@
 # Leveraging Gaze and Set-of-Mark in VLLMs for Human-Object Interaction Anticipation from Egocentric Videos
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![arXiv](https://img.shields.io/badge/arXiv-2604.03667-b31b1b.svg)](https://arxiv.org/abs/2604.03667)
-[![ICPR 2026](https://img.shields.io/badge/ICPR-2026-blue.svg)](https://icpr2026.org/)
+<a href="https://arxiv.org/abs/2604.03667" target="_blank">
+  <img src="https://img.shields.io/badge/arXiv-2604.03667-b31b1b.svg" alt="arXiv">
+</a>
+<a href="https://icpr2026.org/" target="_blank">
+  <img src="https://img.shields.io/badge/ICPR-2026-blue.svg" alt="ICPR 2026">
+</a>
 
 This repository contains the official implementation of the paper **"Leveraging Gaze and Set-of-Mark in VLLMs for Human-Object Interaction Anticipation from Egocentric Videos"**.
 
