@@ -1,10 +1,15 @@
 # Leveraging Gaze and Set-of-Mark in VLLMs for Human-Object Interaction Anticipation from Egocentric Videos
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![arXiv](https://img.shields.io/badge/arXiv-2604.03667-b31b1b.svg)](https://arxiv.org/abs/2604.03667)
+[![ICPR 2026](https://img.shields.io/badge/ICPR-2026-blue.svg)](https://icpr2026.org/)
 
 This repository contains the official implementation of the paper **"Leveraging Gaze and Set-of-Mark in VLLMs for Human-Object Interaction Anticipation from Egocentric Videos"**.
 
+🎉 **Accepted at ICPR 2026!**
+
 We propose a methodology to enhance Vision Large Language Models (VLLMs) for human-object interaction anticipation using:
+
 1.  **Set-of-Mark (SoM)** for visual grounding.
 2.  **User Gaze Trajectories** for user intent understanding.
 3.  **Inverse Exponential Sampling** for a temporal context-based frame sampling.
