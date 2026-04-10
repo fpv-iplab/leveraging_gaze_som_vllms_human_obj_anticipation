@@ -8,6 +8,8 @@
   <img src="https://img.shields.io/badge/ICPR-2026-blue.svg" alt="ICPR 2026">
 </a>
 
+**Authors:** Daniele Materia, Francesco Ragusa, Giovanni Maria Farinella
+
 This repository contains the official implementation of the paper **"Leveraging Gaze and Set-of-Mark in VLLMs for Human-Object Interaction Anticipation from Egocentric Videos"**.
 
 🎉 **Accepted at ICPR 2026!**
@@ -216,4 +218,19 @@ python src/inference/obj_ia_inf_gemini.py \
     --annotations_path /path/to/hd_epic_annotations \
     --mode som_gaze \
     --fps 1
+```
+
+## 📚 Citation
+
+If you use this work in your research, please cite it as follows:
+
+```bibtex
+@inproceedings{materia2026Leveraging,
+  booktitle = { International Conference on Pattern Recognition (ICPR) },
+  url = {  },
+  pdf = {  },
+  year = { 2026 },
+  author = { Daniele Materia and Francesco Ragusa and Giovanni Maria Farinella },
+  title = { Leveraging Gaze and Set-of-Mark in VLLMs for Human-Object Interaction Anticipation from Egocentric Videos },
+}
 ```
