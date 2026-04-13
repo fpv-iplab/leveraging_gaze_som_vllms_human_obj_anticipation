@@ -25,6 +25,7 @@ We propose a methodology to enhance Vision Large Language Models (VLLMs) for hum
 ## 🛠️ Hardware Requirements
 
 - **GPU:** NVIDIA GPU with at least 16GB of VRAM (Flash Attention 2 support recommended).
+- **CUDA:** CUDA 12.6 or later.
 - **Storage:** ~2.5TB space required for the dataset and processed video clips.
 
 ## Dataset
